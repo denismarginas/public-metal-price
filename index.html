@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Public Metal Price</title>
+        <meta name="description" content="Get and show metals price from public API(s) with JavaScript, HTML, CSS">
+        <meta name="keywords" content="public metal price">
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <script src="scripts/script.js"></script>
+    </head>
+    <body>
+        <header id="header" class="d-flex-center">
+            <container>
+                <div class="logo">
+                    <svg class="metal-vectorial-logo" width="121" height="73" viewBox="0 0 800 484" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M547.339 117.958L435.06 89.8936L57.8852 254.788L0 370.571L196.534 427.017L603.467 246.048L547.339 117.958Z" fill="#F6BB42"/>
+                        <path d="M547.338 117.957L168.407 286.391L196.534 427.016L603.467 246.047L547.338 117.957Z" fill="#FFCE54"/>
+                        <path d="M168.408 286.391L57.8852 254.787L0.0234375 370.57L196.534 427.016L168.408 286.391Z" fill="#E8AA3D"/>
+                        <path d="M743.873 174.392L631.594 146.315L254.419 311.221L196.534 427.016L393.065 483.413L800 302.458L743.873 174.392Z" fill="#F6BB42"/>
+                        <path d="M743.873 174.393L364.94 342.789L393.066 483.414L800 302.458L743.873 174.393Z" fill="#FFCE54"/>
+                        <path d="M364.94 342.789L254.419 311.221L196.534 427.016L393.065 483.414L364.94 342.789Z" fill="#E8AA3D"/>
+                        <path d="M619.386 28.6506L507.129 0.587891L162.329 152.126L104.466 267.909L301 324.331L675.538 156.727L619.386 28.6506Z" fill="#F6BB42"/>
+                        <path d="M619.386 28.6504L272.875 183.705L301 324.331L675.538 156.727L619.386 28.6504Z" fill="#FFCE54"/>
+                        <path d="M272.875 183.705L162.329 152.126L104.466 267.909L301 324.331L272.875 183.705Z" fill="#E8AA3D"/>
+                    </svg>
+                    <span>Public Metal Price</span>
+                </div>
+                <div class="menu">
+                    <ul class="menu-list">
+                        <li>
+                            <a href="#page-content">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#footer">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </container>
+        </header>
+        <div id="page-content" data-page-name="Public Metal Price">
+            <div class="hero d-flex-center">
+                <img class="background-image" src="img/bg-metal-coins.webp" width="100px" height="260px" alt="Background Image with Metals">
+                <container>
+                    <h1>Public Metal Price</h1>
+                    <p>Get and show metals price from public API(s) with JavaScript, HTML, CSS</p>
+                </container>
+            </div>
+            <div class="section-api d-flex-center">
+                <container>
+                    <div class="text-container">
+                        <p class="title">Public API(s)</p>
+                        <ul>
+                            <li>
+                                <span class="default-text">
+                                    Public API:
+                                </span>
+                                <a class="default-text" href="https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/GBP" target="_blank">
+                                    https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/{$metal}/{$currency}
+                                </a>
+                            </li>
+                            <li>
+                                <span class="default-text">
+                                    Public Charts:
+                                </span>
+                                <a class="default-text" href="https://www.bullionvault.com/chart/bullionvaultchart.js" target="_blank">
+                                    https://www.bullionvault.com/chart/bullionvaultchart.js
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </container>
+            </div>
+            <div class="section-graph-metals d-flex-center">
+                <!-- Script for generating the graph for metal free -->
+                <script type="text/javascript" src="https://www.bullionvault.com/chart/bullionvaultchart.js"></script>
+                <!-- Custom Script settings and renders for the graph -->
+                <script type="text/javascript" src="scripts/graph.js"></script>
+                <!-- Custom Script for shortcode for API current metal price -->
+                <script type="text/javascript" src="scripts/shortcodeMetalAPI.js"></script>
+                <!-- Custom Style for the graph -->
+                <link rel="stylesheet" href="styles/graph.css">
+                <container>
+                    <div class="graph-container" style="background-color: #30333D; padding: var( --mp-spacing-primary ); border-radius: var( --mp-border-radius-primary );">
+                        <div id="graphMetal" style="height: 360px; width: 100%;"></div>
+                    </div>
+                    <div class="controls">
+                        <div id="current_prices" class="current_prices">
+                            <div id="current_price_gold" class="current_price current_price_gold">
+                                <span class="default-text">Current Gold Price:</span>
+                                <span class="default-text"><span class="currency">£</span>[metal_price metal="XAU" currency="GBP"]</span>
+                            </div>
+                            <div id="current_price_silver" class="current_price current_price_silver">
+                                <span class="default-text">Current Silver Price:</span>
+                                <span class="default-text"><span class="currency">£</span>[metal_price metal="XAG" currency="GBP"]</span>
+                            </div>
+                            <div id="current_price_platinum" class="current_price current_price_platinum">
+                                <span class="default-text">Current Platinum Price:</span>
+                                <span class="default-text">[metal_price metal="XPT" currency="USD"]<span class="currency">$</span></span>
+                            </div>
+                        </div>
+                        <div class="graph-selector-tab">
+                            <div class="timeframe-selector">
+                                <a class="timeframe" timeframe="1d">1 Day</a>
+                                <div class="divider"></div>
+                                <a class="timeframe" timeframe="1w">Week</a>
+                                <div class="divider"></div>
+                                <a class="timeframe" timeframe="1m">Month</a>
+                                <div class="divider"></div>
+                                <a class="timeframe" timeframe="1y">Year</a>
+                            </div>
+                            <div class="currency-selector">
+                                <select id="label-currency">
+                                    <option value="GBP" selected>GBP</option>
+                                    <option value="USD">USD</option>
+                                    <option value="EUR">EUR</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="graph-labels" class="graph-labels">
+                            <div id="label-gold" class="label-gold label-metal" aria-selected="true">
+                                <span class="default-text">Gold</span>
+                            </div>
+                            <div id="label-silver" class="label-silver label-metal" aria-selected="false">
+                                <span class="default-text">Silver</span>
+                            </div>
+                            <div id="label-platinum" class="label-platinum label-metal" aria-selected="false">
+                                <span class="default-text">Platinum</span>
+                            </div>
+                        </div>
+                    </div>
+                </container>
+            </div>
+        </div>
+        <footer id="footer" class="d-flex-center">
+            <container>
+                <div class="contact-data">
+                    <h3>Contact Data</h3>
+                    <div class="social-item">
+                        <svg data-svg-type="fill" width="40" height="39" viewBox="0 0 40 39">
+                            <path
+                                d="M17.8 0.200015C8.60002 1.20002 1.20002 8.60002 0.200018 17.6C-0.799982 27 4.60002 35.4 12.8 38.6C13.4 38.8 14 38.4 14 37.6V34.4C14 34.4 13.2 34.6 12.2 34.6C9.40002 34.6 8.20002 32.2 8.00002 30.8C7.80002 30 7.40002 29.4 6.80002 28.8C6.20002 28.6 6.00002 28.6 6.00002 28.4C6.00002 28 6.60002 28 6.80002 28C8.00002 28 9.00002 29.4 9.40002 30C10.4 31.6 11.6 32 12.2 32C13 32 13.6 31.8 14 31.6C14.2 30.2 14.8 28.8 16 28C11.4 27 8.00002 24.4 8.00002 20C8.00002 17.8 9.00002 15.6 10.4 14C10.2 13.6 10 12.6 10 11.2C10 10.4 10 9.20002 10.6 8.00002C10.6 8.00002 13.4 8.00002 16.2 10.6C17.2 10.2 18.6 10 20 10C21.4 10 22.8 10.2 24 10.6C26.6 8.00002 29.6 8.00002 29.6 8.00002C30 9.20002 30 10.4 30 11.2C30 12.8 29.8 13.6 29.6 14C31 15.6 32 17.6 32 20C32 24.4 28.6 27 24 28C25.2 29 26 30.8 26 32.6V37.8C26 38.4 26.6 39 27.4 38.8C34.8 35.8 40 28.6 40 20.2C40 8.20002 29.8 -1.19998 17.8 0.200015Z"
+                                fill="#fff">
+                            </path>
+                        </svg>
+                        <a href="https://github.com/denismarginas">github.com/denismarginas</a>
+                    </div>
+                </div>
+                <div class="hide">
+                    <h3>Project Data</h3>
+                    <p>Images are from: https://unsplash.com/</p>
+                    <p>SVGs are from: https://www.svgrepo.com/</p>
+                </div>
+            </container>
+        </footer>
+    </body>
+</html>
