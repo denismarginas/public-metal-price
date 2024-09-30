@@ -80,9 +80,12 @@
                 <script type="text/javascript" src="https://www.bullionvault.com/chart/bullionvaultchart.js"></script>
                 <!-- Custom Script settings and renders for the graph -->
                 <script type="text/javascript" src="scripts/graph.js"></script>
+                <!-- Script live price banner -->
+                <script src="https://www.bullionvault.com/banners/live_price_widget.js"></script>
                 <!-- Custom Script for shortcode for API current metal price -->
                 <script type="text/javascript" src="scripts/shortcodeMetalAPI.js"></script>
                 <!-- Custom Style for the graph -->
+            
                 <link rel="stylesheet" href="styles/graph.css">
                 <container>
                     <div class="graph-container" style="background-color: #30333D; padding: var( --mp-spacing-primary ); border-radius: var( --mp-border-radius-primary );">
@@ -92,15 +95,15 @@
                         <div id="current_prices" class="current_prices">
                             <div id="current_price_gold" class="current_price current_price_gold">
                                 <span class="default-text">Current Gold Price:</span>
-                                <span class="default-text"><span class="currency">£</span>[metal_price metal="XAU" currency="GBP"]</span>
+                                <span class="default-text" style="display: none;"><span class="currency">£</span>[metal_price metal="XAU" currency="GBP"]</span>
                             </div>
                             <div id="current_price_silver" class="current_price current_price_silver">
                                 <span class="default-text">Current Silver Price:</span>
-                                <span class="default-text"><span class="currency">£</span>[metal_price metal="XAG" currency="GBP"]</span>
+                                <span class="default-text" style="display: none;"><span class="currency">£</span>[metal_price metal="XAG" currency="GBP"]</span>
                             </div>
                             <div id="current_price_platinum" class="current_price current_price_platinum">
                                 <span class="default-text">Current Platinum Price:</span>
-                                <span class="default-text">[metal_price metal="XPT" currency="USD"]<span class="currency">$</span></span>
+                                <span class="default-text" style="display: none;">[metal_price metal="XPT" currency="USD"]<span class="currency">$</span></span>
                             </div>
                         </div>
                         <div class="graph-selector-tab">
